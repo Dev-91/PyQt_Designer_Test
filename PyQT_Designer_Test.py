@@ -1,6 +1,6 @@
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QBrush, QImage, QPalette, QPixmap
 from PyQt5 import uic
 import time
 import sys
@@ -12,7 +12,7 @@ import PyQT_Thread
 
 form_class = uic.loadUiType("Layout.ui")[0]
 
-class MyWindow(QMainWindow, form_class):
+class MainWindow(QMainWindow, form_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -20,6 +20,16 @@ class MyWindow(QMainWindow, form_class):
         self.pushButton_1.clicked.connect(self.btn_1_clicked)
         self.pushButton_2.clicked.connect(self.threadStart)
         self.pushButton_3.clicked.connect(self.threadStop)
+        self.pushButton_4.clicked.connect(self.createdDialog)
+
+
+        # 배경 화면 세팅
+        self.p_image = QImage("cloud_background.jpg")
+        # .scaled(QSize(self.width(), self.height()))
+
+        self.palette = QPalette()
+        self.palette.setBrush(10, QBrush(self.p_image))
+        self.setPalette(self.palette)
 
         # 쓰레드 인스턴스 생성
         self.th_1 = PyQT_Thread.TestThread(self)
@@ -43,7 +53,16 @@ class MyWindow(QMainWindow, form_class):
             print('이미지 : 쓰레드 시작')
             self.th_3.isRun = True
             self.th_3.start()
-    
+
+    def createdDialog(self):
+        dp_image = QImage("clear_image.png")
+        dialog_palette = QPalette()
+        dialog_palette.setBrush(10, QBrush(dp_image))
+
+        self.dialog = QDialog()
+        self.dialog.setPalette(dialog_palette)
+        self.dialog.show()
+
     @pyqtSlot()
     def threadStart(self):
         if not self.th_1.isRun:
@@ -90,6 +109,6 @@ class MyWindow(QMainWindow, form_class):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    myWindow = MyWindow()
-    myWindow.show()
+    mainWindow = MainWindow()
+    mainWindow.showFullScreen()
     app.exec_()

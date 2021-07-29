@@ -5,6 +5,14 @@
   <property name="enabled">
    <bool>true</bool>
   </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>562</width>
+    <height>300</height>
+   </rect>
+  </property>
   <property name="minimumSize">
    <size>
     <width>500</width>
@@ -36,41 +44,21 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>TH ON</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3" colspan="2">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>TH OFF</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="5">
-     <widget class="QLCDNumber" name="lcdNumber_1">
-      <property name="digitCount">
-       <number>5</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="6">
+    <item row="0" column="7">
      <widget class="QLCDNumber" name="lcdNumber_2">
       <property name="digitCount">
        <number>5</number>
       </property>
      </widget>
     </item>
-    <item row="1" column="4" colspan="3">
+    <item row="0" column="6">
+     <widget class="QLCDNumber" name="lcdNumber_1">
+      <property name="digitCount">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4" colspan="4">
      <widget class="QTextBrowser" name="textBrowser_1"/>
     </item>
     <item row="1" column="0" colspan="4">
@@ -83,6 +71,33 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>TH OFF</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>TH ON</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="text">
+       <string>Dialog</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -90,12 +105,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>562</width>
      <height>24</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
